@@ -5,16 +5,17 @@ inspects the project, uses an existing Dockerfile or writes a minimal one, creat
 own API key if needed, deploys, and reports the URL. Cloudish builds the image
 server-side, so no local Docker is required.
 
-`SKILL.md` here is a copy of the upstream skill at
+The files here are an unmodified copy of the upstream skill at
 [cloudishai/skills](https://github.com/cloudishai/skills/tree/main/skills/cloudish)
-(MIT, see `LICENSE`). It tells the agent to read https://cloudish.ai/skill.md for
-the current API before making any call.
+(version 0.1.6, MIT, see `LICENSE`). `SKILL.md` holds the workflow and API
+reference; the agent reads the other files only when it needs them:
+`container.md`, `instances.md`, `replicas.md`, `credits.md` and `changelog.md`.
 
 ## Install
 
 ```bash
 mkdir -p ~/.claude/skills/cloudish
-cp SKILL.md ~/.claude/skills/cloudish/
+cp SKILL.md changelog.md container.md credits.md instances.md replicas.md ~/.claude/skills/cloudish/
 ```
 
 Or install it as a Claude Code plugin:
